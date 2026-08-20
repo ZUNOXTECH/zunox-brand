@@ -1,0 +1,32 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "zx": {
+          "deep": "#002830",
+          "ground": "#003942",
+          "surface": "#014E59",
+          "line": "#0A6A73",
+          "g700": "#00704F",
+          "g500": "#00C389",
+          "g400": "#5FE3B4",
+          "ink": "#F0F7F4",
+          "muted": "#8FB3AF",
+          "paper": "#F4F7F7"
+        }
+      },
+      "fontFamily": {
+        "display": [
+          "Sora",
+          "system-ui",
+          "sans-serif"
+        ],
+        "sans": [
+          "Manrope",
+          "system-ui",
+          "sans-serif"
+        ]
+      }
+    }
+  }
+}

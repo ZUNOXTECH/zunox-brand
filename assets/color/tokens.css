@@ -1,0 +1,18 @@
+:root{
+  --zx-deep: #002830;
+  --zx-ground: #003942;
+  --zx-surface: #014E59;
+  --zx-line: #0A6A73;
+  --zx-g700: #00704F;
+  --zx-g500: #00C389;
+  --zx-g400: #5FE3B4;
+  --zx-ink: #F0F7F4;
+  --zx-muted: #8FB3AF;
+  --zx-paper: #F4F7F7;
+}
+
+/* tipografía */
+:root{
+  --zx-font-display: "Sora", system-ui, sans-serif;
+  --zx-font-body: "Manrope", system-ui, sans-serif;
+}

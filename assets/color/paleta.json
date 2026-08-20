@@ -1,0 +1,185 @@
+{
+  "marca": "Zunox",
+  "colores": [
+    {
+      "token": "deep",
+      "nombre": "Zunox Ink",
+      "hex": "#002830",
+      "rgb": [
+        0,
+        40,
+        48
+      ],
+      "cmyk": [
+        100,
+        17,
+        0,
+        81
+      ],
+      "pantone_aprox": "5535 C",
+      "uso": "Tinta más oscura. Texto sobre claro, versión de una tinta."
+    },
+    {
+      "token": "ground",
+      "nombre": "Zunox Deep",
+      "hex": "#003942",
+      "rgb": [
+        0,
+        57,
+        66
+      ],
+      "cmyk": [
+        100,
+        14,
+        0,
+        74
+      ],
+      "pantone_aprox": "3165 C",
+      "uso": "Color principal de marca. Fondos, cabeceras, superficies amplias."
+    },
+    {
+      "token": "surface",
+      "nombre": "Zunox Surface",
+      "hex": "#014E59",
+      "rgb": [
+        1,
+        78,
+        89
+      ],
+      "cmyk": [
+        99,
+        12,
+        0,
+        65
+      ],
+      "pantone_aprox": null,
+      "uso": "Tarjetas y bloques sobre el fondo principal."
+    },
+    {
+      "token": "line",
+      "nombre": "Zunox Line",
+      "hex": "#0A6A73",
+      "rgb": [
+        10,
+        106,
+        115
+      ],
+      "cmyk": [
+        91,
+        8,
+        0,
+        55
+      ],
+      "pantone_aprox": null,
+      "uso": "Filetes, bordes y separadores."
+    },
+    {
+      "token": "g700",
+      "nombre": "Green Deep",
+      "hex": "#00704F",
+      "rgb": [
+        0,
+        112,
+        79
+      ],
+      "cmyk": [
+        100,
+        0,
+        29,
+        56
+      ],
+      "pantone_aprox": "342 C",
+      "uso": "Verde para texto y enlaces sobre fondo claro (AA)."
+    },
+    {
+      "token": "g500",
+      "nombre": "Zunox Green",
+      "hex": "#00C389",
+      "rgb": [
+        0,
+        195,
+        137
+      ],
+      "cmyk": [
+        100,
+        0,
+        30,
+        24
+      ],
+      "pantone_aprox": "3405 C",
+      "uso": "Verde de marca. La X del logo, botones, acentos."
+    },
+    {
+      "token": "g400",
+      "nombre": "Green Light",
+      "hex": "#5FE3B4",
+      "rgb": [
+        95,
+        227,
+        180
+      ],
+      "cmyk": [
+        58,
+        0,
+        21,
+        11
+      ],
+      "pantone_aprox": "344 C",
+      "uso": "Hover y destacados sobre fondo oscuro."
+    },
+    {
+      "token": "ink",
+      "nombre": "Zunox Paper",
+      "hex": "#F0F7F4",
+      "rgb": [
+        240,
+        247,
+        244
+      ],
+      "cmyk": [
+        3,
+        0,
+        1,
+        3
+      ],
+      "pantone_aprox": null,
+      "uso": "Texto principal sobre fondo oscuro."
+    },
+    {
+      "token": "muted",
+      "nombre": "Zunox Muted",
+      "hex": "#8FB3AF",
+      "rgb": [
+        143,
+        179,
+        175
+      ],
+      "cmyk": [
+        20,
+        0,
+        2,
+        30
+      ],
+      "pantone_aprox": null,
+      "uso": "Texto secundario y bajadas."
+    },
+    {
+      "token": "paper",
+      "nombre": "Paper",
+      "hex": "#F4F7F7",
+      "rgb": [
+        244,
+        247,
+        247
+      ],
+      "cmyk": [
+        1,
+        0,
+        0,
+        3
+      ],
+      "pantone_aprox": null,
+      "uso": "Fondo claro de la marca."
+    }
+  ]
+}
