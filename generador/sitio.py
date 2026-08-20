@@ -247,11 +247,11 @@ def top(active):
     return f"""<header class="top"><div class="wrap">
       <a class="brand" href="/">{marca}<span>Zunox · Kit de marca</span></a>
       <nav class="nav" aria-label="Secciones">
-        {a('/', 'Descargas', active == 'dl')}{a('/manual.html', 'Manual', active == 'man')}
+        {a('/', 'Descargas', active == 'dl')}{a('/manual', 'Manual', active == 'man')}
       </nav>
     </div></header>"""
 
-JUMP_MAN = """<a class="jump" href="/manual.html">
+JUMP_MAN = """<a class="jump" href="/manual">
   <div><span class="k">Siguiente</span>
   <span class="t">Manual de<br>identidad</span>
   <p class="d">Cuánto aire necesita el logo, a partir de qué tamaño deja de leerse,

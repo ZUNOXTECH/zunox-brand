@@ -41,7 +41,7 @@ Los archivos oficiales de la marca **Zunox** y el manual de identidad.
    parecida: las letras del logo están dibujadas a medida.
 
 Todo lo demás — área de respeto, tamaños mínimos, usos prohibidos — está en el
-[manual de identidad](https://brandkit.zunox.es/manual.html).
+[manual de identidad](https://brandkit.zunox.es/manual).
 
 ## Licencias
 
