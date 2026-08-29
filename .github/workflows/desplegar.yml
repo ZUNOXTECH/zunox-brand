@@ -1,0 +1,81 @@
+# Despliegue automático en Vercel.
+#
+# Mismo planteamiento que en zunox-web, y por el mismo motivo: el plan Hobby no
+# deja conectar un repositorio privado de una organización con la integración de
+# Git de Vercel. Este repositorio es público, pero comparte equipo de Vercel con
+# los privados, así que se hace igual en los cuatro para que haya un solo modo de
+# desplegar y no dos.
+#
+# Un push a main sale a producción; una PR abre un preview. Hace falta un único
+# secreto, VERCEL_TOKEN, en Settings > Secrets and variables > Actions.
+#
+# La construcción ocurre en Vercel, no aquí: este sitio es estático y no hay nada
+# que compilar antes de subirlo.
+#
+# Los dos identificadores de abajo no son secretos: sin el token no sirven de
+# nada. Van aquí porque .vercel/ está en .gitignore y el runner los necesita.
+
+name: Desplegar en Vercel
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: desplegar-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  VERCEL_ORG_ID: team_vGIi8zdTd3zlmlD7QzrSEdt9
+  VERCEL_PROJECT_ID: prj_p7B7twAmUqvYiwk4rOPgal9pOnGc
+
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Instalar la CLI de Vercel
+        run: npm install --global vercel@latest
+
+      # Si el token no vale, el despliegue falla con un error que no lo dice.
+      - name: Comprobar el alcance del token
+        continue-on-error: true
+        run: vercel whoami --token=${{ secrets.VERCEL_TOKEN }} || echo "(el token no identifica ninguna cuenta)"
+
+      - name: A dónde va este despliegue
+        id: destino
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "entorno=producción" >> "$GITHUB_OUTPUT"
+            echo "flag=--prod"        >> "$GITHUB_OUTPUT"
+          else
+            echo "entorno=preview" >> "$GITHUB_OUTPUT"
+            echo "flag="           >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Desplegar
+        id: desplegar
+        run: |
+          url=$(vercel deploy ${{ steps.destino.outputs.flag }} \
+            --yes \
+            --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Dejar la dirección a la vista
+        run: |
+          {
+            echo "### Desplegado"
+            echo ""
+            echo "- Entorno: \`${{ steps.destino.outputs.entorno }}\`"
+            echo "- Commit: \`${{ github.sha }}\`"
+            echo "- Dirección: ${{ steps.desplegar.outputs.url }}"
+            if [ "${{ steps.destino.outputs.flag }}" = "--prod" ]; then
+              echo "- En producción: https://brandkit.zunox.es"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
