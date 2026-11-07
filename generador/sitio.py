@@ -302,7 +302,7 @@ def landing():
         for z, n, sub, d in PACKS)
     sueltos = "".join(f'<a href="/{p}" download><span>{n}</span><span>{size(p)}</span></a>'
                       for p, n in SUELTOS)
-    return f"""<!--zunox-->{HEAD.format(title='Kit de marca Zunox', css=CSS,
+    return f"""<!--zunox-->{HEAD.format(title='Kit de marca y prensa de Zunox: logos, colores y tipografías', css=CSS,
       desc='Descarga los logos, colores y tipografías de Zunox. Vectores, PNG, favicon y material para imprenta.')}
 {top('dl')}
 <main>
@@ -442,7 +442,7 @@ def manual():
                     f'<p class="mark" style="color:#B4341B;margin-bottom:5px">No</p>'
                     f'<p style="font-size:clamp(15px,1.05vw,17px);line-height:1.45">{t}</p></div>'
                     for k, t in MALOS)
-    return f"""<!--zunox-->{HEAD.format(title='Manual de identidad Zunox', css=CSS,
+    return f"""<!--zunox-->{HEAD.format(title='Manual de identidad de Zunox: logo, color, tipografía y usos', css=CSS,
       desc='Cómo se construye la marca Zunox: símbolo, bloqueos, aire, color, tipografía y usos prohibidos.')}
 {top('man')}
 <main>
